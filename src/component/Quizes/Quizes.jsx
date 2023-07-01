@@ -8,14 +8,24 @@ const Quizes = () => {
     const [step, setStep] = React.useState(0)
     const question = questions[step]
     const [correct, setCorrect] = React.useState(0)
+    const [answers, setAnswers] = React.useState('');
 
     const onClickVariant = (index) =>{
+        const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+        const answer = alphabet[index];
+        setAnswers((prevAnswers) => prevAnswers + answer);
         setStep(step+1)
+        console.log('answer', answer)
 
         if (index === question.correct){
             setCorrect(correct+1)
         }
     }
+
+    React.useEffect(() => {
+        console.log('answers', answers);
+      }, [answers]);
+
 
   return (
     <div className='body-quiz'>
