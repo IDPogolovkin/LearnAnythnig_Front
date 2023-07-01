@@ -23,7 +23,6 @@ const Home = () => {
             <Reviews/>
             <Contact/>
             <Footer/>
-            {/* <ScrollTop/>   */}
         </main>
     );
 };
