@@ -5,10 +5,8 @@ import { Button, Overlay } from 'react-bootstrap';
 import Popover from 'react-bootstrap/Popover'
 import './PopOver.css';
 import toast from 'react-hot-toast';
-import { SET_USER, useAppContext } from '../../../context';
 
 const PopOver = () => {
-    const { state:{user: { name, email, img }}, dispatch} = useAppContext()
     const [show, setShow] = useState(false);
     const [target, setTarget] = useState(null);
     const ref = useRef(null);
@@ -21,7 +19,7 @@ const PopOver = () => {
     }
     return (
         <div >
-            <img src={img} alt="" onClick={handleClick} className="popImg"/>
+            <img src='https://cdn-icons-png.flaticon.com/512/6522/6522516.png' alt="" onClick={handleClick} className="popImg"/>
              <Overlay
                 show={show}
                 target={target}
@@ -31,9 +29,9 @@ const PopOver = () => {
             >
                 <Popover id="popover-contained">
                     <div className="text-center">
-                        <img src={img} alt="" className="popUserImg"/>
-                        <p className="userName">{`${name}`}</p>
-                        <p className="userEmail">{email}</p>
+                        <img src='https://cdn-icons-png.flaticon.com/512/6522/6522516.png' alt="" className="popUserImg"/>
+                        <p className="userName">name</p>
+                        <p className="userEmail">email</p>
                         <Button variant="outline-danger" size="sm" className='log-out-butt' onClick={signOut}>Log out</Button>
                     </div>
                  </Popover> 

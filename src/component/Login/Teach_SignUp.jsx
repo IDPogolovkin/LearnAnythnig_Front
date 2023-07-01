@@ -8,7 +8,7 @@ import axiosInstance from '../../axios';
 // import toast from 'react-hot-toast';
 
 
-const Teach_SignUp = ({ handleResponse }) => {
+const Teach_SignUp = () => {
   // const { register, handleSubmit, formState: { errors } } = useForm();
 
   // const onSubmit = ({email, password}) => {
@@ -91,8 +91,8 @@ const Teach_SignUp = ({ handleResponse }) => {
       </div>
       {/* {errors.password && <span className="text-warning">This field is required</span>} */}
       <input className="iBtn" type="submit" value="sign up" />
-      <p className="social-text">Or Sign in with social platforms</p>
-      <SocialMedia handleResponse={handleResponse} />
+      {/* <p className="social-text">Or Sign in with social platforms</p>
+      <SocialMedia handleResponse={handleResponse} /> */}
       <br />
       <p>Already have an account?</p>
       <Link to="/sign-in">

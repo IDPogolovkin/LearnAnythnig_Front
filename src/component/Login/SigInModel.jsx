@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import './LoginModal.css';
 import "firebase/compat/auth";
 import log from '../../Assets/register.svg';
@@ -7,34 +7,10 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import SignInForm from './SignInForm';
-import toast from 'react-hot-toast';
-import swal from 'sweetalert';
-import { SET_USER, useAppContext } from '../../context';
 
 const SignFormModal = () => {
-  const { dispatch } = useAppContext()
   const [isSignUp, setSignUp] = useState(false);
 
-  const history = useNavigate();
-  const location = useLocation();
-  let { from } = location.state || { from: { pathname: "/" } };
-
-  const handleResponse = (res) => {
-    dispatch({ type: SET_USER, payload: res })
-    if (!res.error) {
-      toast.success('Successfully Logged In!');
-      history(from);
-    }
-    if (res.email === "admin@mail.com") {
-      swal({
-        title: "Warning!",
-        text: "You have entered the admin panel for testing. Please don't abuse this facility!",
-        icon: "warning",
-        buttons: true,
-        dangerMode: true,
-      })
-    }
-  }
 
   return (
     <div className={`${isSignUp ? "fContainer sign-up-mode" : "fContainer"}`}>
@@ -43,7 +19,7 @@ const SignFormModal = () => {
       </Link>
       <div className="forms-container">
         <div className="signIn-singUp">
-          <SignInForm handleResponse={handleResponse} />
+          <SignInForm />
         </div>
       </div>
 

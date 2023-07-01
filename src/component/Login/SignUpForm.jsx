@@ -14,9 +14,7 @@ const SignUpForm = () => {
     last_name: '',
     surname: '',
     birth_date: '',
-    email: '',
-    password: '',
-    password2: ''
+    email: ''
   });
 
   console.log('first', formData)
@@ -35,20 +33,9 @@ const SignUpForm = () => {
       alert('error: Passwords do not match')
     } else {
 
-
-      const a = {
-        first_name: 'adwd',
-        last_name: 'awdawd',
-        surname: 'awdawd',
-        birth_date: '2020-02-02',
-        email: 'khejdbakjedn@gmail.com',
-        password: 'Test123456',
-        password2: 'Test123456'
-      }
-
-
-      axiosInstance.post('signup/student/', a).then((res) => {
+      axiosInstance.post('signup/student/', formData).then((res) => {
         console.log('res', res)
+        // navigate('/sign-in')
       }
       ).catch((error) => {
         console.error('error: ', error)
