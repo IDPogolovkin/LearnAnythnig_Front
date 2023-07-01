@@ -6,10 +6,10 @@ import Spinner from '../../Shared/Spinner/Spinner';
 const Services = () => {
     const [services, setServices] = useState([])
     
-    useEffect(() => {
-        axios.get('https://immense-river-40491.herokuapp.com/services')
-        .then(res => setServices(res.data))
-    }, [])
+    // useEffect(() => {
+    //     axios.get('https://immense-river-40491.herokuapp.com/services')
+    //     .then(res => setServices(res.data))
+    // }, [])
 
     return (
         <section id="services" className="services">

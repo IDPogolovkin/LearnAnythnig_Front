@@ -4,7 +4,7 @@ import { createAccount } from './LoginManager';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock, faUser } from '@fortawesome/free-solid-svg-icons';
 import SocialMedia from './SocialMedia';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 const SignUpForm = ({handleResponse}) => {
