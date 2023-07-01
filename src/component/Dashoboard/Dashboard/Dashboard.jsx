@@ -1,5 +1,4 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PopOver from '../../Shared/PopOver/PopOver';
 import Sidebar from '../Sidebar/Sidebar';

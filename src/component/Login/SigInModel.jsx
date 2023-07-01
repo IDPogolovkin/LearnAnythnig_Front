@@ -9,7 +9,6 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import SignInForm from './SignInForm';
 import toast from 'react-hot-toast';
 import swal from 'sweetalert';
-import { handleSignOut } from './LoginManager';
 import { SET_USER, useAppContext } from '../../context';
 
 const SignFormModal = () => {
@@ -18,11 +17,11 @@ const SignFormModal = () => {
 
   const history = useNavigate();
   const location = useLocation();
-  let { from } = location.state || { from: { pathname: "/" }};
+  let { from } = location.state || { from: { pathname: "/" } };
 
   const handleResponse = (res) => {
-    dispatch({type: SET_USER, payload: res})
-    if(!res.error){
+    dispatch({ type: SET_USER, payload: res })
+    if (!res.error) {
       toast.success('Successfully Logged In!');
       history(from);
     }
@@ -33,41 +32,33 @@ const SignFormModal = () => {
         icon: "warning",
         buttons: true,
         dangerMode: true,
-      }).then(ok => {
-          if (!ok) {
-              handleSignOut()
-                .then(res => {
-                    dispatch({type: SET_USER, payload: res})
-                    toast.error('Logged Out!');
-                })
-          }
-        });
+      })
     }
   }
-  
-  return (
-    <div className={`${ isSignUp ? "fContainer sign-up-mode" : "fContainer"}`}>
-        <Link to="/">
-          <span className="pageCloseBtn"><FontAwesomeIcon icon={faTimes} /></span>
-        </Link>
-       <div className="forms-container">
-         <div className="signIn-singUp">
-            <SignInForm handleResponse={handleResponse}/>
-         </div>
-       </div>
 
-       <div className="panels-container">
-          <div className="panel left-panel">
-            <div className="content">
-              <h2>New one here?</h2>
-              <p className='sign-text'>Сreate an account and learn anything from any level of background</p>
-              <Link to="/login">
-                <button className="iBtn transparent">Register</button>
-              </Link>
-            </div>
-            <img src={`${log}`} alt="" className="pImg"/>
+  return (
+    <div className={`${isSignUp ? "fContainer sign-up-mode" : "fContainer"}`}>
+      <Link to="/">
+        <span className="pageCloseBtn"><FontAwesomeIcon icon={faTimes} /></span>
+      </Link>
+      <div className="forms-container">
+        <div className="signIn-singUp">
+          <SignInForm handleResponse={handleResponse} />
+        </div>
+      </div>
+
+      <div className="panels-container">
+        <div className="panel left-panel">
+          <div className="content">
+            <h2>New one here?</h2>
+            <p className='sign-text'>Сreate an account and learn anything from any level of background</p>
+            <Link to="/login">
+              <button className="iBtn transparent">Register</button>
+            </Link>
           </div>
-       </div>
+          <img src={`${log}`} alt="" className="pImg" />
+        </div>
+      </div>
     </div>
   );
 };

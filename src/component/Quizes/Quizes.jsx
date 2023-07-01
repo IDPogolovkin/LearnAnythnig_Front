@@ -25,6 +25,7 @@ const Quizes = () => {
     React.useEffect(() => {
         console.log('answers', answers);
       }, [answers]);
+    
 
 
   return (
@@ -34,7 +35,7 @@ const Quizes = () => {
                 step !== questions.length ? (
                      <Game step={step} question={question} onClickVariant={onClickVariant}/>)
                      :(
-                    <Results correct={correct} />)
+                    <Results correct={correct} answers={answers}/>)
             }
         </div>
     </div>

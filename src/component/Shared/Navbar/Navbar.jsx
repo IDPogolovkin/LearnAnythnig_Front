@@ -7,11 +7,9 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import PopOver from '../PopOver/PopOver';
-import { useAppContext } from '../../../context';
 
 
 const NavBar = () => {
-    const { state: { user } } = useAppContext()
     const [isSticky, setSticky] = useState(false)
 
     useEffect(() => {
@@ -51,15 +49,15 @@ const NavBar = () => {
                             <Nav.Link as={Link} to="/dashboard/profile" className="nav-link">Dashboard</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            {
+                            {/* {
                                 user.email ?
                                     <div>
                                         <PopOver />
-                                    </div> :
+                                    </div> : */}
                                     <Link to="/login">
                                         <button className="loginBtn">Login</button>
                                     </Link>
-                            }
+                            {/* } */}
                         </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>

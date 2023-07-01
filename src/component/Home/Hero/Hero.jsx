@@ -91,7 +91,7 @@ const Hero = () => {
                     component={LazyLoadImage}
                     height={1}
                     width={1}
-                    src={'https://assets.maccarianagency.com/screenshots/dashboard.png'}
+                    src={'https://backend.cleverclipstudios.com/wp-content/uploads/2022/04/Blogpost-E-Learnings-1024x576.jpg'}
                     alt="..."
                     effect="blur"
                     boxShadow={3}
@@ -101,6 +101,7 @@ const Hero = () => {
                         filter: theme.palette.mode === 'dark' ? 'brightness(0.7)' : 'none',
                     }}
                 />
+                {/* <iframe width="600" height="415" src="https://www.youtube.com/embed/lvngivtT2xY"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
             </Grid>
         </Grid>
     )

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Col } from 'react-bootstrap';
 import Review from './Review';
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,7 +9,8 @@ import Spinner from '../../Shared/Spinner/Spinner';
 
 const Reviews = () => {
     SwiperCore.use([Pagination, Autoplay]);
-    const [reviews, setReviews] = useState([])
+    // const [reviews, setReviews] = useState([])
+    const reviews = []
     // useEffect(() => {
     //     fetch('https://immense-river-40491.herokuapp.com/reviews')
     //     .then(res => res.json())
@@ -24,7 +25,7 @@ const Reviews = () => {
                 <h3 className="sectionTitle">WHAT OUR CLIENTS SAY’S</h3>
             </div>
             <Col md={11} className="mx-auto">
-                <Swiper 
+                <Swiper
                     pagination={{ clickable: true }}
                     slidesPerView={3}
                     breakpoints={{
@@ -46,20 +47,20 @@ const Reviews = () => {
                         disableOnInteraction: false,
                     }}
                     spaceBetween={10}
-                    >
-                    
+                >
+
                     {
-                        reviews.length === 0 ? 
+                        reviews.length === 0 ?
                             <div className="text-center">
-                                <Spinner/>
-                            </div>: 
+                                <Spinner />
+                            </div> :
                             reviews.map((review, id) => {
-                                return(
+                                return (
                                     <SwiperSlide key={id}>
-                                        <Review review={review} key={review._key}/>
+                                        <Review review={review} key={review._key} />
                                     </SwiperSlide>
                                 )
-                        })
+                            })
                     }
                 </Swiper>
             </Col>

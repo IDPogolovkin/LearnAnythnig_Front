@@ -1,15 +1,13 @@
 import Home from "../src/component/Home/Home/Home";
 import { Routes, Route } from "react-router-dom";
-import React, { createContext } from "react";
+import React from "react";
 import About from "./component/Home/About/About";
 import Dashboard from "./component/Dashoboard/Dashboard/Dashboard";
 import LoginModal from "./component/Login/LoginModal";
-import PrivateRoute from "./component/Login/PrivateRoute";
 import NotFound from "./component/NotFound";
 import SignFormModal from "./component/Login/SigInModel";
 import Quizes from "./component/Quizes/Quizes";
 
-export const UserContext = createContext();
 
 const App = () => {
   return (
@@ -23,9 +21,7 @@ const App = () => {
         <Route
           path="/dashboard/*"
           element={
-            <PrivateRoute redirectTo="/login">
               <Dashboard />
-            </PrivateRoute>
           }
         />
         <Route path="*" element={<NotFound />} />

@@ -1,11 +1,10 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Service from './Service';
 import Spinner from '../../Shared/Spinner/Spinner';
 
 const Services = () => {
-    const [services, setServices] = useState([])
-    
+    // const [services, setServices] = useState([])
+    const services = []
     // useEffect(() => {
     //     axios.get('https://immense-river-40491.herokuapp.com/services')
     //     .then(res => setServices(res.data))
@@ -17,10 +16,10 @@ const Services = () => {
             <div className="text-center">
                 <h5 className="text-center sectionTitle">PROVIDE AWESOME SERVICE</h5>
             </div>
-            {services.length === 0 && <div className="spinner text-center"><Spinner/></div>}
+            {services.length === 0 && <div className="spinner text-center"><Spinner /></div>}
             <div className="row mt-4 container mx-auto justify-content-center">
                 {
-                    services?.map((service, id) => <Service key={service._key + id} service={service}/>)
+                    services?.map((service, id) => <Service key={service._key + id} service={service} />)
                 }
             </div>
         </section>

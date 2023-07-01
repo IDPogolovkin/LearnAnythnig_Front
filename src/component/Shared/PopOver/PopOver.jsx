@@ -5,7 +5,6 @@ import { Button, Overlay } from 'react-bootstrap';
 import Popover from 'react-bootstrap/Popover'
 import './PopOver.css';
 import toast from 'react-hot-toast';
-import { handleSignOut } from '../../Login/LoginManager';
 import { SET_USER, useAppContext } from '../../../context';
 
 const PopOver = () => {
@@ -19,13 +18,6 @@ const PopOver = () => {
     };
     const signOut = () => {
         const loading = toast.loading('Please wait...');
-        handleSignOut()
-        .then(res => {
-            toast.dismiss(loading);
-            console.log(res);
-            dispatch({type: SET_USER, payload: res})
-            toast.error('Logged Out!');
-        })
     }
     return (
         <div >

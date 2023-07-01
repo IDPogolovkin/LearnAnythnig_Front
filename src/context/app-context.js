@@ -1,15 +1,11 @@
 import { useReducer } from "react";
 import { useContext } from "react";
 import { createContext } from "react";
-import { getDecodedUser } from "../component/Login/LoginManager";
 import { reducer } from "./reducer";
 
 const AppContext = createContext();
 
 const initialState = {
-  user: getDecodedUser(),
-  admin: false,
-  selectedService: {},
 };
 
 export const AppProvider = ({ children }) => {
