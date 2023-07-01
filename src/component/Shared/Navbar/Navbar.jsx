@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBuffer } from '@fortawesome/free-brands-svg-icons';
+import { faGraduationCap} from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
@@ -29,7 +29,7 @@ const NavBar = () => {
         <Navbar className={`navbar navbar-expand-lg navbar-light ${isSticky ? "navStyle" : "navDefault"}`} expand="lg">
             <Container>
                 <Navbar.Brand as={Link} to="/" onClick={scrollTop} className="navBrn">
-                    <FontAwesomeIcon icon={faBuffer} className="brnIcon" /> Easy <span className="navHighlight">Consulting</span>
+                    <FontAwesomeIcon icon={faGraduationCap} className="brnIcon" />  Learn <span className="navHighlight"> Anything</span>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" />

@@ -8,16 +8,16 @@
 
 .pageCloseBtn {
   position: absolute;
-  top: 3px;
-  right: 3px;
+  top: 7px;
+  right: 7px;
   cursor: pointer;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1.9rem;
+  width: 1.9rem;
   border-radius: 50%;
   z-index: 33;
-  color: #000;
-  background: #F0F0F0;
-  border: 1px solid #ACACAC;
+  color: #34296a;
+  background: #fffefe;
+  border: 4px solid #d6d6d6;
   text-align: center;
   transition: 0.3s;
 }
@@ -177,6 +177,24 @@
   background: #4C25F5;
 }
 
+.iBtn-sign {
+  width: 135px;
+  height: 39px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: #7355F7;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: .5s;
+}
+.iBtn-sign:hover{
+  background: #4C25F5;
+}
+
 .social-text {
   padding: 0.7rem 0;
   font-size: 1rem;
@@ -253,6 +271,11 @@
   transform: translateX(800px);
 }
 
+.right-panel .content .sign-text{
+  font-size: 22px;
+}
+
+
 
 /* Animation */
 
@@ -264,6 +287,10 @@
 .fContainer.sign-up-mode .left-panel .pImg,
 .fContainer.sign-up-mode .left-panel .content {
   transform: translateX(-800px)
+}
+
+.left-panel .content .sign-text{
+  font-size: 22px;
 }
 
 .fContainer.sign-up-mode .right-panel .content,

@@ -20,11 +20,14 @@
     font-size: 1.1rem;
     color: #878787;
     border-left: 3px solid transparent;
+    text-decoration: none;
+    margin-bottom: 10px;
 }
 #sideNavbar ul li a:hover {
     text-decoration: none;
-    color: #000;
+    color: #7255F6;
     background-color: #EFF2F7;
+    border-radius: 45px;
 }
 
 .activePage{

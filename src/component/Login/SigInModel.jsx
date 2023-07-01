@@ -2,19 +2,17 @@ import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import './LoginModal.css';
 import "firebase/compat/auth";
-import log from '../../Assets/log.svg';
-import desk from '../../Assets/register.svg';
+import log from '../../Assets/register.svg';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import SignUpForm from './SignUpForm';
+import SignInForm from './SignInForm';
 import toast from 'react-hot-toast';
 import swal from 'sweetalert';
 import { handleSignOut } from './LoginManager';
 import { SET_USER, useAppContext } from '../../context';
-import Teach_SignUp from './Teach_SignUp';
 
-const Form = () => {
+const SignFormModal = () => {
   const { dispatch } = useAppContext()
   const [isSignUp, setSignUp] = useState(false);
 
@@ -54,33 +52,24 @@ const Form = () => {
         </Link>
        <div className="forms-container">
          <div className="signIn-singUp">
-            {/* <SignInForm handleResponse={handleResponse}/> */}
-            <SignUpForm handleResponse={handleResponse}/>
-            <Teach_SignUp handleResponse={handleResponse}/>
+            <SignInForm handleResponse={handleResponse}/>
          </div>
        </div>
 
        <div className="panels-container">
           <div className="panel left-panel">
             <div className="content">
-              <h2>Wanna learn any topic ?</h2>
+              <h2>New one here?</h2>
               <p className='sign-text'>Сreate an account and learn anything from any level of background</p>
-              <button className="iBtn transparent" onClick={() => setSignUp(true)}>Register</button>
+              <Link to="/login">
+                <button className="iBtn transparent">Register</button>
+              </Link>
             </div>
             <img src={`${log}`} alt="" className="pImg"/>
-          </div>
-
-          <div className="panel right-panel">
-            <div className="content">
-              <h2>Wanna be a Mentor ?</h2>
-              <p className='sign-text'>Сreate an account and start teaching students now</p>
-              <button className="iBtn transparent" onClick={() => setSignUp(false)}>Register</button>
-            </div>
-            <img src={`${desk}`} alt="" className="pImg"/>
           </div>
        </div>
     </div>
   );
 };
 
-export default Form;
+export default SignFormModal;

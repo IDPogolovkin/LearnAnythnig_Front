@@ -49,6 +49,8 @@
     font-weight: 500;
     color: #fff;
     border-radius: 0.3rem;
+    border-radius: 44px;
+    margin-bottom: 10px;
   }
   
   .backBtnBox .backBtn:hover{

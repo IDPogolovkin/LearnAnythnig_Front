@@ -42,7 +42,7 @@ const PopOver = () => {
                         <img src={img} alt="" className="popUserImg"/>
                         <p className="userName">{`${name}`}</p>
                         <p className="userEmail">{email}</p>
-                        <Button variant="outline-danger" size="sm" onClick={signOut}>Log out</Button>
+                        <Button variant="outline-danger" size="sm" className='log-out-butt' onClick={signOut}>Log out</Button>
                     </div>
                  </Popover> 
             </Overlay> 

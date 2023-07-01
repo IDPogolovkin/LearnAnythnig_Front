@@ -2,8 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Sidebar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart, faCommentAlt, faUserPlus, faCog, faFileMedical, faList, faUserCircle} from '@fortawesome/free-solid-svg-icons'
-import { faBuffer } from '@fortawesome/free-brands-svg-icons';
+import { faCommentAlt, faUserPlus, faCog, faFileMedical, faList, faUserCircle, faGraduationCap, faBook} from '@fortawesome/free-solid-svg-icons'
 import { useAppContext } from '../../../context';
 
 const Sidebar = ({setTitle}) => {
@@ -13,9 +12,9 @@ const Sidebar = ({setTitle}) => {
         <div>
             <div className="sideBrand">
                 <div className="sideBrnIcon">
-                    <FontAwesomeIcon icon={faBuffer}/>
+                    <FontAwesomeIcon icon={faGraduationCap}/>
                     </div>
-                <h2>Easy <span className="navHighlight">Consulting</span></h2>
+                <h2>Learn <span className="navHighlight">Anything</span></h2>
             </div>
             <nav id="sideNavbar">
                 <ul>    
@@ -55,9 +54,9 @@ const Sidebar = ({setTitle}) => {
                         :
                         <>
                             <li>
-                                <NavLink onClick={() => setTitle('Book')} activeclassname="activePage" exact to="/dashboard/book">
-                                    <FontAwesomeIcon icon={faShoppingCart} className="iconC"/> 
-                                    Book
+                                <NavLink onClick={() => setTitle('Courses')} activeclassname="activePage" exact to="/dashboard/book">
+                                    <FontAwesomeIcon icon={faBook} className="iconC"/> 
+                                    Courses
                                 </NavLink>
                             </li>
                             <li>
