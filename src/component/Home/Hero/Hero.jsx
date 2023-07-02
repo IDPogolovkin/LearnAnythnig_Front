@@ -14,6 +14,7 @@ const Hero = () => {
     const isMd = useMediaQuery(theme.breakpoints.up('md'), {
         defaultMatches: true,
     });
+
     return (
         <Grid container spacing={4}>
             <Grid item container xs={12} md={6} alignItems={'center'}>

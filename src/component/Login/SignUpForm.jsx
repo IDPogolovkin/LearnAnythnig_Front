@@ -35,7 +35,7 @@ const SignUpForm = () => {
 
       axiosInstance.post('signup/student/', formData).then((res) => {
         console.log('res', res)
-        // navigate('/sign-in')
+        navigate('/sign-in')
       }
       ).catch((error) => {
         console.error('error: ', error)

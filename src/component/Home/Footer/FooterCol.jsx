@@ -8,12 +8,10 @@ import { scrollUP } from '../../Shared/ScrollTop/ScrollTop';
 const FooterCol = (props) => {
     return (
         <Col md={6} lg={3} className="footerLink">
-            <h5>{props.title? props.title : ''}</h5>
+            <h5>{props.title ? props.title : ''}</h5>
             {
-                props.menuItems?.map(({name, id}) => <Link to="/" onClick={scrollUP} key={id}><li>
-                    {/* <FontAwesomeIcon icon={faAngleDoubleRight} 
-                className="footArrowIcon"/> */}
-                 {name}</li></Link>)
+                props.menuItems?.map(({ name, id }) => <Link to="/" onClick={scrollUP} key={id}><li>
+                    {name}</li></Link>)
             }
             {props.children && props.children}
         </Col>

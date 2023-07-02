@@ -1,16 +1,19 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import './quizes.css'
-import questions from './questions'
 import axiosInstance from '../../axios';
 
-const Results = ({correct, answers}) => {
+const Results = ({questions, correct, answers}) => {
+  
+  const navigate = useNavigate();
 
   function handleSubmit(event){
     event.preventDefault();
-    axiosInstance.post('create/course/',{
-      answers
+    axiosInstance.post('get-topics/',{
+      "answers": answers,
+      "prompt": localStorage.getItem("prompt")
     }).then((response)=>{
+      navigate('/dashboard/book')
        console.log('response', response.data)
     }).catch((error)=>{
         console.log(error);
@@ -22,9 +25,7 @@ const Results = ({correct, answers}) => {
     <div className="result">
     <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" />
     <h2>You answered {correct} out of {questions.length} questions correctly</h2>
-    <Link to='/dashboard/profile'>
       <button onClick={handleSubmit}>Finish quiz</button>
-    </Link>
   </div>
   )
 }

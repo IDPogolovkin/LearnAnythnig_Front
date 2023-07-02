@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGraduationCap} from '@fortawesome/free-solid-svg-icons';
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
@@ -21,6 +21,8 @@ const NavBar = () => {
             }
         })
     }, [])
+
+    const user = localStorage.getItem('access_token')
 
     const scrollTop = () => window['scrollTo']({ top: 0, behavior: 'smooth' });
     return (
@@ -49,15 +51,15 @@ const NavBar = () => {
                             <Nav.Link as={Link} to="/dashboard/profile" className="nav-link">Dashboard</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            {/* {
-                                user.email ?
+                            {
+                                user ?
                                     <div>
                                         <PopOver />
-                                    </div> : */}
+                                    </div> :
                                     <Link to="/login">
                                         <button className="loginBtn">Login</button>
                                     </Link>
-                            {/* } */}
+                            }
                         </Nav.Item>
                     </Nav>
                 </Navbar.Collapse>

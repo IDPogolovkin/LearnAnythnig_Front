@@ -9,20 +9,21 @@ import Header from '../Header/Header';
 import Pricing from '../Pricing/Pricing';
 import Reviews from '../Reviews/Reviews';
 import Services from '../Services/Services';
+import Course from '../Course/Course'
 
 const Home = () => {
     return (
         <main>
-            <Header/>
-            <BuildTools/>
-            <About/>
-            <Services/>
-            <BrowserSupport/>
-            <HappyClient/>
-            <Pricing/>
-            <Reviews/>
-            <Contact/>
-            <Footer/>
+            <Header />
+            <Course />
+            <About />
+            <Services />
+            <BrowserSupport />
+            <HappyClient />
+            <Pricing />
+            <Reviews />
+            <Contact />
+            <Footer />
         </main>
     );
 };

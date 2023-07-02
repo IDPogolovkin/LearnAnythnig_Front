@@ -4,7 +4,7 @@ const baseURL = 'http://192.168.8.54:6969/api/';
 
 const axiosInstance = axios.create({
 	baseURL: baseURL,
-	timeout: 20000,
+	timeout: 200000000,
 	headers: {
 		Authorization: localStorage.getItem('access_token')
 			? 'Bearer ' + localStorage.getItem('access_token')

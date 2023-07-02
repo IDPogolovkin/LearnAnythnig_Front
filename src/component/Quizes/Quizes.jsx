@@ -1,11 +1,11 @@
 import React from 'react'
 import Game from './Game'
 import './quizes.css'
-import questions from './questions'
 import Results from './Results'
 
-const Quizes = () => {
+const Quizes = (props) => {
     const [step, setStep] = React.useState(0)
+    const questions = props.questions
     const question = questions[step]
     const [correct, setCorrect] = React.useState(0)
     const [answers, setAnswers] = React.useState('');
@@ -33,9 +33,9 @@ const Quizes = () => {
         <div className="main-quiz">
             {
                 step !== questions.length ? (
-                     <Game step={step} question={question} onClickVariant={onClickVariant}/>)
+                     <Game questions={questions} step={step} question={question} onClickVariant={onClickVariant}/>)
                      :(
-                    <Results correct={correct} answers={answers}/>)
+                    <Results questions={questions} correct={correct} answers={answers}/>)
             }
         </div>
     </div>
