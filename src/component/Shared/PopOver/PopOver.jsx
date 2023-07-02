@@ -10,10 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 const PopOver = () => {
     let navigate = useNavigate()
-    const routeHandler = (URL) => {
-        navigate(URL)
-    }
-
+    
     const user = localStorage.getItem('access_token')
     let decode
 

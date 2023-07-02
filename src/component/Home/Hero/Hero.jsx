@@ -25,7 +25,7 @@ const Hero = () => {
                             color="text.primary"
                             sx={{ fontWeight: 700 }}
                         >
-                            Easy Consulting{' '} <br />
+                            Learn what you want{' '} <br />
                             Start Your {' '}
                             <Typography
                                 color={'primary'}
@@ -36,7 +36,7 @@ const Hero = () => {
                                 }}
                             >
                                 <Typed
-                                    strings={['Business', 'Startup']}
+                                    strings={['Education', 'Journey']}
                                     typeSpeed={100}
                                     loop={true}
                                 />
@@ -45,9 +45,7 @@ const Hero = () => {
                     </Box>
                     <Box marginBottom={3}>
                         <Typography variant="h6" component="p" color="text.secondary">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, delectus.
-                            <br />
-                            Lorem ipsum dolor sit amet.
+                            Empowering Minds with AI: Unleashing Knowledge, One Lesson at a Time
                         </Typography>
                     </Box>
                     <Box
@@ -59,21 +57,11 @@ const Hero = () => {
                             variant="contained"
                             color="primary"
                             size="large"
+                            href='#contact'
                             fullWidth={isMd ? false : true}
                         >
                             Start now
                         </Button>
-                        <Box
-                            component={Button}
-                            variant="outlined"
-                            color="primary"
-                            size="large"
-                            marginTop={{ xs: 2, sm: 0 }}
-                            marginLeft={{ sm: 2 }}
-                            fullWidth={isMd ? false : true}
-                        >
-                            Learn more
-                        </Box>
                     </Box>
                 </Box>
             </Grid>

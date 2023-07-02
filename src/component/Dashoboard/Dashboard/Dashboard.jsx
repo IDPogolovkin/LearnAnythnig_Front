@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import PopOver from '../../Shared/PopOver/PopOver';
 import Sidebar from '../Sidebar/Sidebar';
@@ -6,22 +6,34 @@ import UserDashboard from '../UserDashboard/UserDashboard/UserDashboard';
 import './Dashboard.css';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import axiosInstance from '../../../axios';
 
 const Dashboard = () => {
     const [sideToggle, setSideToggle] = useState(false)
     const [title, setTitle] = useState('Learn Anything')
 
+    const getData = () => {
+        axiosInstance('data/').then((response) => {
+        }).catch((error) => {
+            console.error(error)
+        })
+    }
+
+    useEffect(() => {
+        getData()
+    }, [])
+
 
     return (
         <div id="dashboard">
-            <div id="sidebar" className={ sideToggle ? "active" : "" }>
+            <div id="sidebar" className={sideToggle ? "active" : ""}>
                 <div className="sidebarContent">
-                    <Sidebar setTitle={setTitle}/>
+                    <Sidebar setTitle={setTitle} />
                     <div className="backBtnBox">
                         <Link to="/">
-                            <button className="backBtn"> 
-                            <FontAwesomeIcon icon={faSignOutAlt}/> 
-                              back to home</button>
+                            <button className="backBtn">
+                                <FontAwesomeIcon icon={faSignOutAlt} />
+                                back to home</button>
                         </Link>
                     </div>
                 </div>
@@ -30,8 +42,8 @@ const Dashboard = () => {
                 <div className="dashBoardHeader">
                     <div className="d-flex align-items-center">
                         <div id="nav-icon"
-                        className={sideToggle ? "menu-btn" : "menu-btn open"}
-                        onClick={() => setSideToggle(!sideToggle)}>
+                            className={sideToggle ? "menu-btn" : "menu-btn open"}
+                            onClick={() => setSideToggle(!sideToggle)}>
                             <span></span>
                             <span></span>
                             <span></span>
@@ -41,9 +53,9 @@ const Dashboard = () => {
                         </div>
                         <h3>{title}</h3>
                     </div>
-                    <PopOver/> 
+                    <PopOver />
                 </div>
-                     <UserDashboard/>
+                <UserDashboard />
             </div>
         </div>
     )

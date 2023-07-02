@@ -39,13 +39,7 @@ const NavBar = () => {
                             <Nav.Link as={Link} to="/" className="nav-link" onClick={() => window['scrollTo']({ top: 0, behavior: 'smooth' })}>Home</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Nav.Link href="#services" className="nav-link">Services</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link href="#testimonial" className="nav-link">Reviews</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link href="#contact" className="nav-link">Contact Us</Nav.Link>
+                            <Nav.Link href="#contact" className="nav-link">Study</Nav.Link>
                         </Nav.Item>
                         <Nav.Item>
                             <Nav.Link as={Link} to="/dashboard/profile" className="nav-link">Dashboard</Nav.Link>
