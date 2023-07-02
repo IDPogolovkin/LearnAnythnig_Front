@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import UserCourses from '../../Card/UserCourses'
 import SingleCourse from '../../Card/SingleCourse'
 import axiosInstance from '../../../../axios'
+import Topic from '../../Card/Topic'
 
 
 const UserDashboard = () => {
@@ -26,7 +27,7 @@ const UserDashboard = () => {
             <Route path="profile" element={<Profile data={data} />} />
             <Route path="courses" element={<UserCourses data={data} />} />
             <Route path="courses/:id" element={<SingleCourse data={data} />} />
-            <Route path="courses/:id/:topic" element={<SingleCourse data={data} />} />
+            <Route path="courses/:id/:topic_id" element={<Topic data={data} />} />
         </Routes>
     )
 }

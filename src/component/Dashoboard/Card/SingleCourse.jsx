@@ -16,7 +16,7 @@ function SingleCourse(props) {
                                     {
                                         topic?.is_opened ?
                                             <>
-                                                <Link to={`${topic?.name}`}>
+                                                <Link to={`${topic?.id}`}>
                                                     <Button >{topic.name}</Button>
                                                 </Link >
                                             </>

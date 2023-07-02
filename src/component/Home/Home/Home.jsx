@@ -13,6 +13,7 @@ const Home = () => {
             <Header />
             <Course />
             <About />
+            <Pricing/>
             <HappyClient />
             <Footer />
         </main>
