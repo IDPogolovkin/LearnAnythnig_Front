@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Quizes from '../../Quizes/Quizes';
 import axiosInstance from '../../../axios';
+import QuizesFinal from '../../Quizes/QuizesFinal';
 
 
 function Topic(props) {
@@ -10,13 +11,23 @@ function Topic(props) {
   const courseId = parseInt(id, 10)
   const topicId = parseInt(topic_id, 10)
   const [open, setOpen] = useState(false)
-  const data = props.data
   const handleClose = () => {
     setOpen(false)
   }
 
+
+  const [data, setData] = useState({})
+  const getData = () => {
+    axiosInstance('data/').then((response) => {
+      console.log(response)
+      setData(response.data[0])
+    }).catch((error) => {
+      console.error(error)
+    })
+  }
+
+
   console.log('data', data)
-  console.log('data_student', data?.student?.course[courseId - 1]?.topic[topicId - 1]?.quiz[0].question)
   const [topics, setTopic] = useState([])
   const [quiz, setQuiz] = useState({})
 
@@ -24,13 +35,14 @@ function Topic(props) {
     axiosInstance.post('quiz-data/', { "topic_id": topic_id }).then((response) => {
       setQuiz(response.data)
     })
+    console.log('topics', topics)
   }
 
-  console.log('quiz', quiz)
   useEffect(() => {
-    setTopic(data?.student?.course[courseId - 1].topic)
-    console.log("adadawdaw", data?.student?.course[courseId - 1])
+    getData()
     getQuiz(topicId)
+    setTopic(data?.student?.course[courseId - 1]?.topic)
+
   }, [])
 
 
@@ -38,10 +50,9 @@ function Topic(props) {
     <div>
       {topics?.map(topic =>
         <>{
-          topic.id === topicId ?
-            topic?.video?.map(video =>
-              <iframe width="713" height="401" src={video?.link} title="Разработай 6 проектов на ReactJS (для начинающих)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            ) : null}
+          topic?.video?.map(video =>
+            <iframe width="713" height="401" src={video?.link} title="Разработай 6 проектов на ReactJS (для начинающих)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          )}
         </>
 
       )}
@@ -61,7 +72,7 @@ function Topic(props) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Quizes questions={quiz.question} />
+        <QuizesFinal questions={quiz.question} topic_id={topicId} />
       </Modal>
     </div>
   )
